@@ -3,85 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raaziq Nazeer | Portfolio</title>
+    <title>Raaziq Nazeer | ZACX Analyst</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
-        
-        /* Theme Variables */
         :root { --bg: #0d0d0d; --text: #ffffff; --accent: #444; }
         .light-mode { --bg: #ffffff; --text: #0d0d0d; --accent: #ddd; }
-
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg); 
-            color: var(--text); 
-            transition: background-color 0.5s ease, color 0.5s ease;
-            overflow-x: hidden;
-        }
-        
-        .hero-bg {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--bg)), url('profile.jpg'); 
-            background-size: cover; background-position: center; background-attachment: fixed;
-        }
-
-        .reveal { opacity: 0; transform: translateY(40px); }
-        .skill-tag { border: 1px solid var(--accent); color: var(--text); }
-        
-        /* Inverting the grid section based on theme */
-        .light-mode #projects { background-color: #f4f4f4; }
-        .light-mode .project-card h4 { color: #000; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); transition: background-color 0.5s ease; overflow-x: hidden; }
+        .hero-bg { background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--bg)), url('profile.jpg'); background-size: cover; background-position: center; background-attachment: fixed; }
+        .reveal { opacity: 0; transform: translateY(30px); }
+        .border-theme { border-color: var(--accent); }
     </style>
 </head>
 <body>
 
-    <button id="theme-toggle" class="fixed bottom-10 right-10 z-[60] bg-white text-black dark:bg-black dark:text-white p-4 rounded-full font-bold text-xs uppercase tracking-tighter shadow-2xl">
-        Switch Theme
-    </button>
+    <button id="theme-toggle" class="fixed bottom-10 right-10 z-[60] bg-white text-black p-4 rounded-full font-bold text-xs uppercase shadow-2xl hover:scale-110 transition">Toggle Theme</button>
 
-    <nav class="fixed w-full z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
-        <div class="font-black text-2xl tracking-tighter">RN.</div>
-        <div class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-widest">
-            <a href="#about" class="hover:opacity-50">About</a>
-            <a href="#projects" class="hover:opacity-50">Projects</a>
-            <a href="https://github.com/Raaziq13" target="_blank">GitHub</a>
-        </div>
-    </nav>
-
-    <section class="hero-bg h-screen flex flex-col justify-end pb-32 px-6 md:px-24">
-        <div class="max-w-5xl">
-            <span class="reveal text-white font-bold tracking-widest mb-4 uppercase text-sm block italic">ZACX Analyst [cite: 28]</span>
-            <h1 class="reveal text-6xl md:text-9xl font-black leading-none tracking-tighter mb-8 uppercase">
-                Muhammed <br> <span class="opacity-50 italic">Raaziq Nazeer.</span> [cite: 1, 2]
+    <section class="hero-bg h-screen flex flex-col justify-end pb-32 px-10 md:px-24">
+        <div class="reveal">
+            <h1 class="text-6xl md:text-9xl font-black tracking-tighter leading-none uppercase">
+                MUHAMMED <br> <span class="opacity-40 italic font-light">RAAZIQ NAZEER</span>
             </h1>
+            <p class="mt-8 text-xl md:text-2xl max-w-2xl font-light opacity-80">
+                ZACX Analyst at Amazon[cite: 28]. Transforming data into actionable insights to drive measurable business results[cite: 25].
+            </p>
         </div>
     </section>
 
-    <section id="projects" class="py-32 px-6 md:px-24 transition-colors duration-500">
-        <h3 class="text-xs font-black uppercase tracking-widest opacity-40 mb-10 italic">// Core Competencies [cite: 8]</h3>
-        <div class="flex flex-wrap gap-4 mb-20">
-            <span class="skill-tag px-6 py-2 rounded-full text-sm font-bold">SQL [cite: 9]</span>
-            <span class="skill-tag px-6 py-2 rounded-full text-sm font-bold">Data Analysis [cite: 11]</span>
-            <span class="skill-tag px-6 py-2 rounded-full text-sm font-bold">Systems Development </span>
+    <section id="about" class="py-32 px-10 md:px-24 grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div class="reveal">
+            <h2 class="text-sm font-black uppercase tracking-[0.3em] opacity-40 mb-10">// Professional Profile</h2>
+            <p class="text-3xl font-medium leading-tight">
+                Detail-oriented professional with a Diploma in Systems Development (Cum Laude)[cite: 21, 51]. Skilled in SQL and Excel with a focus on trend identification and process optimization[cite: 22, 23].
+            </p>
         </div>
-        </section>
+        <div class="reveal space-y-12">
+            <div>
+                <h2 class="text-sm font-black uppercase tracking-[0.3em] opacity-40 mb-6">// Skills</h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="border border-theme px-4 py-2 rounded-full text-xs uppercase">SQL [cite: 9]</span>
+                    <span class="border border-theme px-4 py-2 rounded-full text-xs uppercase">Data Cleaning [cite: 12]</span>
+                    <span class="border border-theme px-4 py-2 rounded-full text-xs uppercase">Data Visualization [cite: 13]</span>
+                    <span class="border border-theme px-4 py-2 rounded-full text-xs uppercase">Excel [cite: 10]</span>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-sm font-black uppercase tracking-[0.3em] opacity-40 mb-2">// Education</h2>
+                <p class="text-xl font-bold italic">Boston City Campus </p>
+                <p class="opacity-60 uppercase text-xs tracking-widest">Diploma in Systems Development • 2025 [cite: 51, 52]</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-32 px-10 md:px-24 border-t border-theme">
+        <h2 class="text-5xl font-black tracking-tighter uppercase mb-16 italic">Experience</h2>
+        
+        <div class="reveal border-b border-theme py-12 flex flex-col md:flex-row justify-between">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-3xl font-bold uppercase">ZACX Analyst [cite: 28]</h3>
+                <p class="opacity-50 font-bold uppercase text-sm tracking-widest">Amazon | 2025 - Present [cite: 27, 29]</p>
+            </div>
+            <div class="max-w-md opacity-70 text-sm leading-relaxed">
+                Analyze customer contacts to identify policy gaps, system defects, and process inefficiencies[cite: 30].
+            </div>
+        </div>
+
+        <div class="reveal border-b border-theme py-12 flex flex-col md:flex-row justify-between">
+            <div>
+                <h3 class="text-3xl font-bold uppercase opacity-50">Resolution Specialist [cite: 36]</h3>
+                <p class="opacity-30 font-bold uppercase text-sm tracking-widest">Amazon | 2020 - 2025 [cite: 35, 39]</p>
+            </div>
+            <div class="max-w-md opacity-40 text-sm mt-4 md:mt-0 italic">
+                Coached teams and specialized in UK market virtual customer service[cite: 37].
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-40 px-10 md:px-24 text-center">
+        <h2 class="reveal text-5xl md:text-7xl font-black mb-16 uppercase tracking-tighter">Let's Connect.</h2>
+        <div class="reveal flex flex-wrap justify-center gap-6 mb-20 text-xs font-bold uppercase tracking-widest">
+            <a href="https://github.com/Raaziq13" target="_blank" class="hover:opacity-50">GitHub</a>
+            <a href="https://www.linkedin.com/in/raaziq-nazeer-41948a325/" target="_blank" class="hover:opacity-50 text-blue-500">LinkedIn</a>
+            <a href="mailto:bells13089@gmail.com" class="hover:opacity-50">Email [cite: 6]</a>
+        </div>
+        <a href="Raaziq CV 2025 Analyst.pdf" download class="reveal inline-block border-2 border-theme px-12 py-6 font-black uppercase hover:bg-white hover:text-black transition-all">Download CV (PDF)</a>
+    </footer>
 
     <script>
-        // Theme Toggle Logic
+        gsap.registerPlugin(ScrollTrigger);
         const btn = document.getElementById('theme-toggle');
         btn.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');
-            btn.innerText = document.body.classList.contains('light-mode') ? 'Dark Mode' : 'Light Mode';
         });
-
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
         gsap.utils.toArray(".reveal").forEach((elem) => {
             gsap.to(elem, {
                 scrollTrigger: { trigger: elem, start: "top 90%" },
-                y: 0, opacity: 1, duration: 1.5, ease: "power4.out"
+                y: 0, opacity: 1, duration: 1.2, ease: "power4.out"
             });
         });
     </script>
