@@ -12,8 +12,12 @@
         :root { --bg: #0d0d0d; --text: #ffffff; --accent: #444; }
         .light-mode { --bg: #ffffff; --text: #0d0d0d; --accent: #ddd; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); transition: background-color 0.5s ease; overflow-x: hidden; }
-        .hero-bg { background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--bg)), url('profile.jpg'); background-size: cover; background-position: center; background-attachment: fixed; }
-        .reveal { opacity: 0; transform: translateY(30px); }
+        .hero-bg { 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--bg)), url('profile.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+}
         .border-theme { border-color: var(--accent); }
         .project-card { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
         .project-card:hover { transform: translateY(-10px); }
@@ -141,3 +145,4 @@
     </script>
 </body>
 </html>
+
