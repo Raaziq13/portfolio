@@ -8,13 +8,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0d0d0d; color: #ffffff; }
-        .border-theme { border-color: #444; }
+        
+        /* Define Theme Variables */
+        :root { 
+            --bg: #0d0d0d; 
+            --text: #ffffff; 
+            --accent: #444; 
+            --card: #161616; 
+        }
+        
+        .light-mode { 
+            --bg: #ffffff; 
+            --text: #0d0d0d; 
+            --accent: #ddd; 
+            --card: #f5f5f5; 
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text); 
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .border-theme { border-color: var(--accent); }
+        .bg-card-theme { background-color: var(--card); transition: background-color 0.5s ease; }
+        
         .stat-bar { height: 4px; background: #222; overflow: hidden; border-radius: 2px; }
         .stat-fill { height: 100%; background: #3b82f6; transition: width 1.5s ease-in-out; }
     </style>
 </head>
 <body class="p-10 md:p-24">
+
+    <button id="theme-toggle" class="fixed bottom-10 right-10 z-[60] bg-white text-black p-4 rounded-full font-bold text-xs uppercase shadow-2xl hover:scale-110 transition">Toggle Theme</button>
 
     <nav class="mb-20">
         <a href="index.html" class="text-xs font-black uppercase tracking-widest opacity-50 hover:opacity-100 transition">← Back to Home</a>
@@ -46,11 +72,11 @@
             </div>
 
             <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-zinc-900 p-8 border border-theme">
+                <div class="bg-card-theme p-8 border border-theme">
                     <h4 class="font-black uppercase text-xs mb-4">Executive Summary</h4>
                     <p class="text-sm opacity-70 leading-relaxed">Identified two root causes for null SIC codes: 131 parked chats auto-resolving without codes and 69 instances of manual agent failure. 80.4% of phone-related missing codes were behavioral rather than technical defects.</p>
                 </div>
-                <div class="bg-zinc-900 p-8 border border-theme border-l-4 border-blue-600">
+                <div class="bg-card-theme p-8 border border-theme border-l-4 border-blue-600">
                     <h4 class="font-black uppercase text-xs mb-4">Strategic Actions</h4>
                     <p class="text-sm opacity-70 leading-relaxed">Implementing automated SIC assignment for parked chats and mandatory UI controls for agents. Collaborating with international stakeholders (Amazon India) to scale 100% resolution.</p>
                 </div>
@@ -65,11 +91,11 @@
             </div>
 
             <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-zinc-900 p-8 border border-theme">
+                <div class="bg-card-theme p-8 border border-theme">
                     <h4 class="font-black uppercase text-xs mb-4">Fraud Pattern Identified</h4>
                     <p class="text-sm opacity-70 leading-relaxed">Mined 18 cases of "Empty Box" claims for iPhone 16 orders. Pattern showed customers abandoned chats immediately when Incident Reports were mentioned to avoid verification steps.</p>
                 </div>
-                <div class="bg-zinc-900 p-8 border border-theme border-l-4 border-white">
+                <div class="bg-card-theme p-8 border border-theme border-l-4 border-white">
                     <h4 class="font-black uppercase text-xs mb-4">Operational Result</h4>
                     <p class="text-sm opacity-70 leading-relaxed">Discovery led to flagging of fraudulent behavior and the subsequent closure of high-risk accounts in Week 5, preventing multiple unauthorized refunds.</p>
                 </div>
@@ -84,6 +110,25 @@
 
     <script>
         gsap.from("section", { opacity: 0, y: 50, duration: 1, stagger: 0.3, ease: "power3.out" });
+
+        // Theme Toggle Functionality
+        const btn = document.getElementById('theme-toggle');
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            // Save preference to local storage
+            if (document.body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+        });
     </script>
 </body>
 </html>
