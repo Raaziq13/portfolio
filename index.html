@@ -13,14 +13,15 @@
         .light-mode { --bg: #ffffff; --text: #0d0d0d; --accent: #ddd; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); transition: background-color 0.5s ease; overflow-x: hidden; }
         .hero-bg { 
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--bg)), url('profile.png'); 
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed; 
-}
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--bg)), url('profile.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+        }
         .border-theme { border-color: var(--accent); }
         .project-card { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
         .project-card:hover { transform: translateY(-10px); }
+        .reveal { opacity: 0; transform: translateY(30px); }
     </style>
 </head>
 <body>
@@ -63,108 +64,41 @@
         </div>
     </section>
 
-  <section id="portfolio" class="py-32 px-10 md:px-24 border-t border-theme">
-    <div class="flex justify-between items-end mb-20">
-        <div>
-            <h2 class="text-sm font-black uppercase tracking-[0.3em] opacity-40 mb-4 italic">Selected Work</h2>
-            <h3 class="text-5xl md:text-7xl font-black tracking-tighter uppercase">Portfolio</h3>
-        </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-        <div class="reveal md:col-span-8 group project-card cursor-pointer" onclick="window.open('https://raaziq13.github.io/GourmetMeals/', '_blank')">
-            <div class="bg-zinc-900 aspect-video mb-6 overflow-hidden relative border border-theme">
-                <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80" alt="GourmetMeals Website" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
-                <div class="absolute top-4 right-4 bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase">Live Project</div>
+    <section id="portfolio" class="py-32 px-10 md:px-24 border-t border-theme">
+        <div class="flex justify-between items-end mb-20">
+            <div>
+                <h2 class="text-sm font-black uppercase tracking-[0.3em] opacity-40 mb-4 italic">Selected Work</h2>
+                <h3 class="text-5xl md:text-7xl font-black tracking-tighter uppercase">Portfolio</h3>
             </div>
-            <h4 class="text-3xl font-black italic uppercase leading-none">GourmetMeals</h4>
-            <p class="text-gray-500 mt-3 font-medium uppercase text-xs tracking-widest">Web Development / Business Operations / Catering</p>
-            <p class="mt-4 opacity-70 max-w-xl text-sm leading-relaxed">
-                A digital platform built for a food business specializing in daily meals and catering for all occasions. 
-                Managed customer relations, compiled orders, and handled general administration to streamline business growth.
-            </p>
         </div>
 
-        <div class="reveal md:col-span-4 group project-card cursor-pointer">
-            <div class="bg-zinc-900 aspect-square mb-6 overflow-hidden relative border border-theme">
-                <img src="https://d15cw65ipctsrr.cloudfront.net/75/a358e8229848568c752c7d29d4155d/Statistic-DataAnalysisWithExcel_Logo.jpg?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="reveal md:col-span-8 group project-card cursor-pointer" onclick="window.open('https://raaziq13.github.io/GourmetMeals/', '_blank')">
+                <div class="bg-zinc-900 aspect-video mb-6 overflow-hidden relative border border-theme">
+                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80" alt="GourmetMeals Website" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                    <div class="absolute top-4 right-4 bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase">Live Project</div>
+                </div>
+                <h4 class="text-3xl font-black italic uppercase leading-none">GourmetMeals</h4>
+                <p class="text-gray-500 mt-3 font-medium uppercase text-xs tracking-widest">Web Development / Business Operations</p>
+                <p class="mt-4 opacity-70 max-w-xl text-sm leading-relaxed">
+                    Digital platform for a family business catering for all occasions. Managed customer relations and administration to streamline growth.
+                </p>
             </div>
-            <h4 class="text-2xl font-black italic uppercase leading-none">CX Data Analysis</h4>
-            <p class="text-gray-500 mt-2 font-medium uppercase text-xs tracking-widest">Amazon | SQL </p>
-            <p class="mt-4 opacity-60 text-sm">
-                Identifying policy gaps and system defects through detailed data interpretation.
-            </p>
-        </div>
-    </div>
-</section>
 
-<section id="deep-dives" class="py-32 px-10 md:px-24 border-t border-theme">
-    <div class="flex justify-between items-end mb-16">
-        <div>
-            <h2 class="text-sm font-black uppercase tracking-[0.3em] opacity-40 mb-4 italic">Operational Excellence</h2>
-            <h3 class="text-5xl font-black tracking-tighter uppercase">Deep Dive Analysis</h3>
-        </div>
-    </div>
-    
-    <div class="space-y-16">
-        <div class="reveal border border-theme p-8 md:p-12 group hover:border-white transition-all duration-500">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                
-                <div class="lg:col-span-1 space-y-8 border-r border-theme pr-8">
-                    <div>
-                        <p class="text-[10px] uppercase tracking-widest opacity-50 mb-2">Analysis Scope</p>
-                        <p class="text-4xl font-black italic italic">W4 — W5</p>
-                    </div>
-                    <div class="flex gap-10">
-                        <div>
-                            <p class="text-[10px] uppercase tracking-widest opacity-50 mb-1">Sample Size</p>
-                            <p class="text-2xl font-bold">39</p>
-                        </div>
-                        <div>
-                            <p class="text-[10px] uppercase tracking-widest opacity-50 mb-1">Mined</p>
-                            <p class="text-2xl font-bold text-blue-500">20</p>
-                        </div>
-                    </div>
-                    <div class="pt-4">
-                        <p class="text-[10px] uppercase tracking-widest opacity-50 mb-4">Focus Areas</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[9px] border border-theme px-2 py-1 rounded uppercase">Empty Box Claims</span>
-                            <span class="text-[9px] border border-theme px-2 py-1 rounded uppercase">Account Governance</span>
-                        </div>
+            <div class="reveal md:col-span-4 group project-card cursor-pointer" onclick="window.location.href='analysis.html'">
+                <div class="bg-zinc-900 aspect-square mb-6 overflow-hidden relative border border-theme">
+                    <img src="https://d15cw65ipctsrr.cloudfront.net/75/a358e8229848568c752c7d29d4155d/Statistic-DataAnalysisWithExcel_Logo.jpg?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/60 transition duration-500">
+                        <p class="text-white font-black uppercase text-xs tracking-[0.2em]">View Deep Dives</p>
                     </div>
                 </div>
-
-                <div class="lg:col-span-2 space-y-8">
-                    <div>
-                        <h4 class="text-2xl font-black uppercase italic mb-4">Incomplete Contacts Analysis</h4>
-                        <p class="opacity-70 text-sm leading-relaxed">
-                            Conducted a detailed investigation into customer contact patterns to identify refund abuse and policy gaps[cite: 30]. The mining focused on high-value incidents involving iPhone 16 refunds.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-                        <div class="bg-white/5 p-6 rounded-sm">
-                            <h5 class="text-xs font-black uppercase mb-3 text-blue-400">Findings: Empty Box (18)</h5>
-                            <ul class="text-xs space-y-3 opacity-80 leading-loose">
-                                <li>• Customers abandoned chats immediately upon mention of incident reports.</li>
-                                <li>• Identified a pattern of multiple repeat contacts following account closures in Week 5.</li>
-                                <li>• Successfully flagged fraudulent refund requests for high-value electronics.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-white/5 p-6 rounded-sm">
-                            <h5 class="text-xs font-black uppercase mb-3 text-gray-400">Business Accounts (2)</h5>
-                            <ul class="text-xs space-y-3 opacity-80 leading-loose">
-                                <li>• Analyzed inquiries regarding business account creation.</li>
-                                <li>• Provided insights to support cross-functional solutions for improved onboarding[cite: 31].</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <h4 class="text-2xl font-black italic uppercase leading-none">CX Data Analysis</h4>
+                <p class="text-gray-500 mt-2 font-medium uppercase text-xs tracking-widest">Amazon | SQL</p>
+                <p class="mt-4 opacity-60 text-sm">Identifying policy gaps and system defects through detailed data interpretation.</p>
             </div>
         </div>
-    </div>
-</section>
-    
+    </section>
+
     <section id="experience" class="py-32 px-10 md:px-24 border-t border-theme">
         <h2 class="text-5xl font-black tracking-tighter uppercase mb-16 italic">Experience</h2>
         
@@ -174,7 +108,7 @@
                 <p class="opacity-50 font-bold uppercase text-sm tracking-widest">Amazon | 2025 - Present</p>
             </div>
             <div class="max-w-md opacity-70 text-sm leading-relaxed">
-                Analyze customer contacts to identify policy gaps, system defects, and process inefficiencies. Collaborate with cross-functional teams to develop and implement solutions improving customer experience. Audit and validate CSA compliance with customer service policies and quality standards. Analyze process flows and concession data to support operational excellence and defect elimination. Apply data-driven problem-solving and reporting to drive measurable improvements in CX performance metrics.
+                Analyze customer contacts to identify policy gaps and system defects. Apply data-driven problem-solving to drive measurable improvements in CX performance metrics.
             </div>
         </div>
 
@@ -184,17 +118,7 @@
                 <p class="opacity-30 font-bold uppercase text-sm tracking-widest">Amazon | 2024 - 2025</p>
             </div>
             <div class="max-w-md opacity-40 text-sm mt-4 md:mt-0 italic">
-                Investigated and resolved high-level technical and seller escalations by performing deep-dive root cause analyses. Leveraged tools like Asana to manage complex data and ensure strict policy compliance while collaborating cross-functionally to transform recurring issues into streamlined process improvements.
-            </div>
-        </div>
-
-        <div class="reveal border-b border-theme py-12 flex flex-col md:flex-row justify-between">
-            <div>
-                <h3 class="text-3xl font-bold uppercase opacity-50">Customer Service Associate</h3>
-                <p class="opacity-30 font-bold uppercase text-sm tracking-widest">Amazon | 2020 - 2024</p>
-            </div>
-            <div class="max-w-md opacity-40 text-sm mt-4 md:mt-0 italic">
-                Served as the primary point of contact for global customers, resolving complex issues regarding orders, products, and payments through phone, chat, and email. Utilized a suite of digital tools to provide high-quality, efficient service in a fast-paced, 24/7 environment, maintaining a high bar for communication and problem-solving to ensure a seamless customer experience.
+                Investigated high-level technical and seller escalations by performing deep-dive root cause analyses.
             </div>
         </div>
     </section>
@@ -224,13 +148,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
