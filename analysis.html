@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Reports | Raaziq Nazeer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0d0d0d; color: #ffffff; }
+        .border-theme { border-color: #444; }
+        .stat-bar { height: 4px; background: #222; overflow: hidden; border-radius: 2px; }
+        .stat-fill { height: 100%; background: #3b82f6; transition: width 1.5s ease-in-out; }
+    </style>
+</head>
+<body class="p-10 md:p-24">
+
+    <nav class="mb-20">
+        <a href="index.html" class="text-xs font-black uppercase tracking-widest opacity-50 hover:opacity-100 transition">← Back to Home</a>
+    </nav>
+
+    <header class="mb-32">
+        <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter italic leading-none">Analytical <br>Deep Dives</h1>
+        <p class="mt-8 text-xl opacity-50 max-w-2xl font-light">Documented investigations into root causes, policy gaps, and system defects.</p>
+    </header>
+
+    <div class="space-y-32">
+        
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-theme pt-12">
+            <div class="lg:col-span-4">
+                <h2 class="text-xs font-black uppercase tracking-widest text-blue-500 mb-2">Investigation 01</h2>
+                <h3 class="text-4xl font-black uppercase italic">Null SIC Code Report</h3>
+                <p class="text-sm opacity-40 mt-4">Nov 12, 2025 • Sample: 200 Contacts</p>
+                
+                <div class="mt-10 space-y-6">
+                    <div>
+                        <div class="flex justify-between text-[10px] uppercase font-bold mb-2"><span>Parked Chats</span><span>65.5%</span></div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 65.5%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-[10px] uppercase font-bold mb-2"><span>Agent Non-Selection</span><span>34.5%</span></div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 34.5%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-zinc-900 p-8 border border-theme">
+                    <h4 class="font-black uppercase text-xs mb-4">Executive Summary</h4>
+                    <p class="text-sm opacity-70 leading-relaxed">Identified two root causes for null SIC codes: 131 parked chats auto-resolving without codes and 69 instances of manual agent failure. 80.4% of phone-related missing codes were behavioral rather than technical defects.</p>
+                </div>
+                <div class="bg-zinc-900 p-8 border border-theme border-l-4 border-blue-600">
+                    <h4 class="font-black uppercase text-xs mb-4">Strategic Actions</h4>
+                    <p class="text-sm opacity-70 leading-relaxed">Implementing automated SIC assignment for parked chats and mandatory UI controls for agents. Collaborating with international stakeholders (Amazon India) to scale 100% resolution.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-theme pt-12">
+            <div class="lg:col-span-4">
+                <h2 class="text-xs font-black uppercase tracking-widest text-blue-500 mb-2">Investigation 02</h2>
+                <h3 class="text-4xl font-black uppercase italic">Incomplete Contacts</h3>
+                <p class="text-sm opacity-40 mt-4">Weeks 4-5 • Sample: 39 Contacts</p>
+            </div>
+
+            <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-zinc-900 p-8 border border-theme">
+                    <h4 class="font-black uppercase text-xs mb-4">Fraud Pattern Identified</h4>
+                    <p class="text-sm opacity-70 leading-relaxed">Mined 18 cases of "Empty Box" claims for iPhone 16 orders. Pattern showed customers abandoned chats immediately when Incident Reports were mentioned to avoid verification steps.</p>
+                </div>
+                <div class="bg-zinc-900 p-8 border border-theme border-l-4 border-white">
+                    <h4 class="font-black uppercase text-xs mb-4">Operational Result</h4>
+                    <p class="text-sm opacity-70 leading-relaxed">Discovery led to flagging of fraudulent behavior and the subsequent closure of high-risk accounts in Week 5, preventing multiple unauthorized refunds.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="mt-40 pt-20 border-t border-theme text-center">
+        <p class="text-[10px] uppercase tracking-widest opacity-30 italic">Raaziq Nazeer • Confidential Analysis Portfolio</p>
+    </footer>
+
+    <script>
+        gsap.from("section", { opacity: 0, y: 50, duration: 1, stagger: 0.3, ease: "power3.out" });
+    </script>
+</body>
+</html>
