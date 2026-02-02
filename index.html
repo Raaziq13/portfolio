@@ -99,36 +99,66 @@
 </section>
 
 <section id="deep-dives" class="py-32 px-10 md:px-24 border-t border-theme">
-    <h2 class="text-sm font-black uppercase tracking-[0.3em] opacity-40 mb-16">Deep Dive Analysis</h2>
+    <div class="flex justify-between items-end mb-16">
+        <div>
+            <h2 class="text-sm font-black uppercase tracking-[0.3em] opacity-40 mb-4 italic">Operational Excellence</h2>
+            <h3 class="text-5xl font-black tracking-tighter uppercase">Deep Dive Analysis</h3>
+        </div>
+    </div>
     
-    <div class="space-y-12">
-        <div class="reveal border border-theme p-8 md:p-12 group hover:bg-white hover:text-black transition-all duration-500">
-            <div class="flex flex-col md:flex-row justify-between mb-8">
-                <div>
-                    <h3 class="text-3xl font-black italic uppercase">Incomplete Contacts Analysis</h3>
-                    <p class="text-xs font-bold opacity-50 uppercase tracking-widest mt-2">Timeline: Weeks 4-5 | Sample: 39</p>
+    <div class="space-y-16">
+        <div class="reveal border border-theme p-8 md:p-12 group hover:border-white transition-all duration-500">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                
+                <div class="lg:col-span-1 space-y-8 border-r border-theme pr-8">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest opacity-50 mb-2">Analysis Scope</p>
+                        <p class="text-4xl font-black italic italic">W4 — W5</p>
+                    </div>
+                    <div class="flex gap-10">
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest opacity-50 mb-1">Sample Size</p>
+                            <p class="text-2xl font-bold">39</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest opacity-50 mb-1">Mined</p>
+                            <p class="text-2xl font-bold text-blue-500">20</p>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <p class="text-[10px] uppercase tracking-widest opacity-50 mb-4">Focus Areas</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[9px] border border-theme px-2 py-1 rounded uppercase">Empty Box Claims</span>
+                            <span class="text-[9px] border border-theme px-2 py-1 rounded uppercase">Account Governance</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-4 md:mt-0">
-                    <span class="text-[10px] border border-current px-3 py-1 rounded-full font-bold uppercase">Amazon Operations</span>
-                </div>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h4 class="text-xs font-black uppercase mb-4 opacity-60">The Investigation</h4>
-                    <p class="text-sm leading-relaxed mb-4">
-                        Mined 20 critical contacts to identify refund abuse patterns. Discovered a trend involving 18 contacts claiming **"Empty Box"** shipments for high-value items like iPhone 16s.
-                    </p>
-                    <ul class="text-sm space-y-2 opacity-80">
-                        <li>• Pattern: Customers abandoned chats once Incident Reports were mentioned.</li>
-                        <li>• Action: Successfully identified accounts for closure in Week 5 due to fraudulent behavior.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xs font-black uppercase mb-4 opacity-60">Business Impact</h4>
-                    <p class="text-sm leading-relaxed">
-                        By identifying these "Incomplete Contacts," we exposed policy gaps where customers were attempting to circumvent standard refund verification. This data supports **Defect Elimination** and operational excellence.
-                    </p>
+                <div class="lg:col-span-2 space-y-8">
+                    <div>
+                        <h4 class="text-2xl font-black uppercase italic mb-4">Incomplete Contacts Analysis</h4>
+                        <p class="opacity-70 text-sm leading-relaxed">
+                            Conducted a detailed investigation into customer contact patterns to identify refund abuse and policy gaps[cite: 30]. The mining focused on high-value incidents involving iPhone 16 refunds.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                        <div class="bg-white/5 p-6 rounded-sm">
+                            <h5 class="text-xs font-black uppercase mb-3 text-blue-400">Findings: Empty Box (18)</h5>
+                            <ul class="text-xs space-y-3 opacity-80 leading-loose">
+                                <li>• Customers abandoned chats immediately upon mention of incident reports.</li>
+                                <li>• Identified a pattern of multiple repeat contacts following account closures in Week 5.</li>
+                                <li>• Successfully flagged fraudulent refund requests for high-value electronics.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/5 p-6 rounded-sm">
+                            <h5 class="text-xs font-black uppercase mb-3 text-gray-400">Business Accounts (2)</h5>
+                            <ul class="text-xs space-y-3 opacity-80 leading-loose">
+                                <li>• Analyzed inquiries regarding business account creation.</li>
+                                <li>• Provided insights to support cross-functional solutions for improved onboarding[cite: 31].</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -194,6 +224,7 @@
     </script>
 </body>
 </html>
+
 
 
 
