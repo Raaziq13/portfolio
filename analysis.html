@@ -9,7 +9,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
         
-        /* Define Theme Variables */
         :root { 
             --bg: #0d0d0d; 
             --text: #ffffff; 
@@ -36,19 +35,21 @@
         
         .stat-bar { height: 4px; background: #222; overflow: hidden; border-radius: 2px; }
         .stat-fill { height: 100%; background: #3b82f6; transition: width 1.5s ease-in-out; }
+        code { font-family: 'Courier New', monospace; }
     </style>
 </head>
 <body class="p-10 md:p-24">
 
     <button id="theme-toggle" class="fixed bottom-10 right-10 z-[60] bg-white text-black p-4 rounded-full font-bold text-xs uppercase shadow-2xl hover:scale-110 transition">Toggle Theme</button>
 
-    <nav class="mb-20">
+    <nav class="mb-20 flex justify-between items-center">
         <a href="index.html" class="text-xs font-black uppercase tracking-widest opacity-50 hover:opacity-100 transition">← Back to Home</a>
+        <span class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-30">Analytical Portfolio 2026</span>
     </nav>
 
     <header class="mb-32">
         <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter italic leading-none">Analytical <br>Deep Dives</h1>
-        <p class="mt-8 text-xl opacity-50 max-w-2xl font-light">Documented investigations into root causes, policy gaps, and system defects.</p>
+        <p class="mt-8 text-xl opacity-50 max-w-2xl font-light">Transforming raw Amazon contact data into systemic process improvements and defect elimination strategies.</p>
     </header>
 
     <div class="space-y-32">
@@ -57,28 +58,39 @@
             <div class="lg:col-span-4">
                 <h2 class="text-xs font-black uppercase tracking-widest text-blue-500 mb-2">Investigation 01</h2>
                 <h3 class="text-4xl font-black uppercase italic">Null SIC Code Report</h3>
-                <p class="text-sm opacity-40 mt-4">Week 36-44 2025 • Sample: 200 Contacts</p>
+                <p class="text-sm opacity-40 mt-4">Weeks 36-44 2025 • Sample: 200 Contacts</p>
                 
                 <div class="mt-10 space-y-6">
                     <div>
-                        <div class="flex justify-between text-[10px] uppercase font-bold mb-2"><span>Parked Chats</span><span>65.5%</span></div>
+                        <div class="flex justify-between text-[10px] uppercase font-bold mb-2"><span>Parked Chats (System)</span><span>65.5%</span></div>
                         <div class="stat-bar"><div class="stat-fill" style="width: 65.5%"></div></div>
                     </div>
                     <div>
-                        <div class="flex justify-between text-[10px] uppercase font-bold mb-2"><span>Agent Non-Selection</span><span>34.5%</span></div>
+                        <div class="flex justify-between text-[10px] uppercase font-bold mb-2"><span>Agent Non-Selection (Behavioral)</span><span>34.5%</span></div>
                         <div class="stat-bar"><div class="stat-fill" style="width: 34.5%"></div></div>
                     </div>
                 </div>
             </div>
 
-            <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-card-theme p-8 border border-theme">
-                    <h4 class="font-black uppercase text-xs mb-4">Executive Summary</h4>
-                    <p class="text-sm opacity-70 leading-relaxed">Identified two root causes for null SIC codes: 131 parked chats auto-resolving without codes and 69 instances of manual agent failure. 80.4% of phone-related missing codes were behavioral rather than technical defects.</p>
+            <div class="lg:col-span-8 space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-card-theme p-8 border border-theme">
+                        <h4 class="font-black uppercase text-xs mb-4">Executive Summary</h4>
+                        <p class="text-sm opacity-70 leading-relaxed">Identified that 131 chats auto-resolved without system-assigned SICs. Significantly, 80.4% of phone-related gaps were behavioral, highlighting a need for UI-enforced mandatory selection.</p>
+                    </div>
+                    <div class="bg-card-theme p-8 border border-theme border-l-4 border-blue-600">
+                        <h4 class="font-black uppercase text-xs mb-4">Strategic Impact</h4>
+                        <p class="text-sm opacity-70 leading-relaxed">Implementation of automated SIC assignment for parked chats is projected to resolve 100% of data blind spots in the "Message Us" channel.</p>
+                    </div>
                 </div>
-                <div class="bg-card-theme p-8 border border-theme border-l-4 border-blue-600">
-                    <h4 class="font-black uppercase text-xs mb-4">Strategic Actions</h4>
-                    <p class="text-sm opacity-70 leading-relaxed">Implementing automated SIC assignment for parked chats and mandatory UI controls for agents. Collaborating with international stakeholders (Amazon India) to scale 100% resolution.</p>
+                <div class="bg-card-theme p-6 rounded border border-theme border-dashed">
+                    <h5 class="text-[10px] font-black uppercase text-blue-500 mb-4 tracking-widest">Mining Logic (Conceptual SQL)</h5>
+                    <code class="text-[11px] opacity-60 block leading-relaxed">
+                        SELECT channel, COUNT(*) as null_count <br>
+                        FROM amzn_interaction_logs <br>
+                        WHERE sic_code IS NULL AND status = 'parked' <br>
+                        GROUP BY channel;
+                    </code>
                 </div>
             </div>
         </section>
@@ -86,18 +98,43 @@
         <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-theme pt-12">
             <div class="lg:col-span-4">
                 <h2 class="text-xs font-black uppercase tracking-widest text-blue-500 mb-2">Investigation 02</h2>
-                <h3 class="text-4xl font-black uppercase italic">Incomplete SIC Contacts</h3>
-                <p class="text-sm opacity-40 mt-4">Week 4-5 2026 • Sample: 39 Contacts</p>
+                <h3 class="text-4xl font-black uppercase italic">Incomplete Contacts</h3>
+                <p class="text-sm opacity-40 mt-4">Weeks 4-5 2026 • Sample: 39 Contacts</p>
+                <div class="mt-8 p-4 bg-blue-500/10 border border-blue-500/20 rounded text-[11px] uppercase font-bold tracking-wider text-blue-400">
+                    Target: iPhone 16 Refund Leakage
+                </div>
             </div>
 
             <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-card-theme p-8 border border-theme">
-                    <h4 class="font-black uppercase text-xs mb-4">Fraud Pattern Identified</h4>
-                    <p class="text-sm opacity-70 leading-relaxed">Mined 18 cases of "Empty Box" claims for iPhone 16 orders. Pattern showed customers abandoned chats immediately when Incident Reports were mentioned to avoid verification steps.</p>
+                    <h4 class="font-black uppercase text-xs mb-4">Fraud Pattern Recognition</h4>
+                    <p class="text-sm opacity-70 leading-relaxed">Mined 18 cases of "Empty Box" claims. Discovered a 100% correlation between chat abandonment and the CSA's mention of formal incident reports.</p>
                 </div>
                 <div class="bg-card-theme p-8 border border-theme border-l-4 border-white">
                     <h4 class="font-black uppercase text-xs mb-4">Operational Result</h4>
-                    <p class="text-sm opacity-70 leading-relaxed">Discovery led to flagging of fraudulent behavior and the subsequent closure of high-risk accounts in Week 5, preventing multiple unauthorized refunds.</p>
+                    <p class="text-sm opacity-70 leading-relaxed">Directly informed the closure of high-risk accounts in Week 5, successfully mitigating unauthorized concession spend on high-value electronics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-t border-theme pt-32 pb-20">
+            <h2 class="text-xs font-black uppercase tracking-[0.3em] opacity-40 mb-16">Technical Arsenal</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+                <div>
+                    <h4 class="text-sm font-black uppercase mb-2">Data Mining</h4>
+                    <p class="text-xs opacity-50">SQL (PostgreSQL), AWS Skill Builder, Data Auditing</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-black uppercase mb-2">Visualization</h4>
+                    <p class="text-xs opacity-50">Power BI, Excel (Advanced Pivot & VBA), Dashboards</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-black uppercase mb-2">Development</h4>
+                    <p class="text-xs opacity-50">HTML5, Tailwind CSS, JavaScript (GSAP)</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-black uppercase mb-2">Strategy</h4>
+                    <p class="text-xs opacity-50">Root Cause Analysis, Defect Elimination, Stakeholder Management</p>
                 </div>
             </div>
         </section>
@@ -105,29 +142,21 @@
     </div>
 
     <footer class="mt-40 pt-20 border-t border-theme text-center">
-        <p class="text-[10px] uppercase tracking-widest opacity-30 italic">Raaziq Nazeer • Confidential Analysis Portfolio</p>
+        <p class="text-[10px] uppercase tracking-widest opacity-30 italic">Confidential Internal Analysis Methodology • Raaziq Nazeer</p>
     </footer>
 
     <script>
-        gsap.from("section", { opacity: 0, y: 50, duration: 1, stagger: 0.3, ease: "power3.out" });
+        gsap.from("section", { 
+            scrollTrigger: { trigger: "section", start: "top 80%" },
+            opacity: 0, y: 50, duration: 1, stagger: 0.3, ease: "power3.out" 
+        });
 
-        // Theme Toggle Functionality
         const btn = document.getElementById('theme-toggle');
-        
-        // Check for saved theme preference
-        if (localStorage.getItem('theme') === 'light') {
-            document.body.classList.add('light-mode');
-        }
+        if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }
 
         btn.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');
-            
-            // Save preference to local storage
-            if (document.body.classList.contains('light-mode')) {
-                localStorage.setItem('theme', 'light');
-            } else {
-                localStorage.setItem('theme', 'dark');
-            }
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
         });
     </script>
 </body>
